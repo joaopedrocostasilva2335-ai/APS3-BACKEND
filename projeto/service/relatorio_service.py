@@ -26,7 +26,6 @@ def ocupacao_eventos(db):
 
 
 def eventos_por_categoria(db):
-    # Subconsulta evita multiplicar a capacidade ao juntar com as inscrições
     por_evento = (
         db.query(Inscricao.evento_id.label("evento_id"), func.count(Inscricao.id).label("total"))
         .group_by(Inscricao.evento_id)
@@ -58,7 +57,7 @@ def participacao_por_curso(db):
     linhas = (
         db.query(
             Participante.curso,
-            func.count(func.distinct(Participante.id)),  # não conta o mesmo participante 2x
+            func.count(func.distinct(Participante.id)),  
             func.count(Inscricao.id),
         )
         .outerjoin(Inscricao, Inscricao.participante_id == Participante.id)
