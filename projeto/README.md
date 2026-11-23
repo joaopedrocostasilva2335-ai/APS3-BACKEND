@@ -1,7 +1,6 @@
 # API de Eventos Acadêmicos — APS 3
 
-API RESTful (FastAPI) para gerenciar eventos, participantes e inscrições. Evolução da APS 2:
-os dados agora ficam em **SQLite** (via **SQLAlchemy ORM**) e a API tem relatórios consolidados.
+API RESTful (FastAPI) para gerenciar eventos, participantes e inscrições. Evolução da APS 2
 
 ## Instalação
 ```bash
