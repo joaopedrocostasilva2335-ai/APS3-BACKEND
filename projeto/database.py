@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import IntegrityError, SQLAlchemyError
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-# O arquivo do banco (eventos.db) fica na pasta do projeto
+# O arquivo do banco 
 engine = create_engine("sqlite:///./eventos.db", connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
